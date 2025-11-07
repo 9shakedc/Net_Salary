@@ -1,3 +1,4 @@
+import streamlit as st
 gross_sal = int(input("Insert your gross salary"))
 pts = float(input("Insert your credit points number"))
 ret_per_ask = int(input("Insert how many percents are set aside for pension fund"))
