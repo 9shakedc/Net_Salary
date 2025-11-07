@@ -3,10 +3,10 @@ import streamlit as st
 st.title("מחשבון שכר נטו")
 st.write("ברוך הבא! הזן את הנתונים שלך:")
 
-gross_sal = st.number_input("שכר ברוטו", min_value=0)
-pts = st.number_input("מספר נקודות זיכוי", min_value=0.0, format="%.2f")
-ret_per_ask = st.slider("אחוזים לפנסיה", min_value=0.0, max_value=30.0, step=0.5)
-keren_h = st.slider("אחוזים לקרן השתלמות", min_value=0.0, max_value=10.0, step=0.5)
+gross_sal = st.number_input("הזן שכר ברוטו", min_value=0)
+pts = st.number_input("הזן מספר נקודות זיכוי", min_value=0.0, format="%.2f")
+ret_per_ask = st.slider("הזן מספר אחוזי הפרשה לפנסיה", min_value=6.0, max_value=7.0, step=1)
+keren_h = st.slider("הזן מספר אחוזי הפרשה לקרן השתלמות", min_value=0.0, max_value=10.0, step=0.5)
 
 if gross_sal > 0:
     keren_h_per = keren_h / 100
@@ -84,3 +84,4 @@ if gross_sal > 0:
     st.write("🏦 פנסיה:", round(ret_per_sum, 2), "שקלים")
     st.write("📚 קרן השתלמות:", round(keren_h_sum, 2), "שקלים")
     st.markdown(f"## 💰 שכר הנטו שלך: **{round(net_sal, 2)}** שקלים")
+
